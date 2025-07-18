@@ -82,11 +82,11 @@ def search(index, query_string):
 
 
 # --- ▼ Streamlitアプリのメインの見た目と操作部分 ▼ ---
-st.title("📂 高速検索システム　はやお")
+st.title("📂 検索システム　はやお")
 
 # --- ▼ 変更点：リフレッシュボタンの追加 ▼ ---
 st.write("---")
-if st.button("🔄 データを強制リフレッシュ"):
+if st.button("🔄 データ更新"):
     # search_indexフォルダが存在すれば削除
     if os.path.exists(INDEX_DIR):
         shutil.rmtree(INDEX_DIR)
@@ -100,7 +100,7 @@ st.write("---")
 
 search_index = get_search_index()
 
-search_keyword = st.text_input("検索キーワードを入力してください", placeholder="例: 破産 賃借")
+search_keyword = st.text_input("検索キーワードを入力してEnter", placeholder="例: 破産 裁判")
 
 if search_keyword and search_index:
     normalized_keyword = search_keyword.replace('　', ' ').strip()
