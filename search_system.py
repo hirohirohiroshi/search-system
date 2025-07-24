@@ -10,9 +10,13 @@ from whoosh.qparser import MultifieldParser, AndGroup
 from whoosh.analysis import NgramAnalyzer
 
 # --- ▼ 設定項目 ▼ ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+print(BASE_DIR)
 GOOGLE_DRIVE_FILE_ID = "1FGd89dvLBrG8ZZuwlmYbVx-ySX8snAmP"
-JSON_FILE_PATH = "downloaded_database.json"
-INDEX_DIR = "search_index"
+JSON_FILE_PATH = os.path.join(BASE_DIR, "legalmemo.json")
+INDEX_DIR = os.path.join(BASE_DIR, "search_index")
+# --- ▲ 設定項目 ▲ ---
+
 # --- ▲ 設定項目 ▲ ---
 
 
